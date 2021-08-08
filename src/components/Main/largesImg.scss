@@ -20,7 +20,7 @@
         &_description_btn{
                 @include flex(row,space-between,center);
                 >div{
-                        max-width: 80px;
+                        max-width: 100px;
                         color: #FFF;
                         font-family: 'Lobster', cursive;
                         font-size: 25px;
