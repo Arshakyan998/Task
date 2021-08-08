@@ -95,7 +95,7 @@ function AddNewPhoto({ addNewPhotoInRedux }) {
         <div className="add_main">
           {result.src && (
             <div style={{ margin: "2px auto" }}>
-              <img src={result.src} alt="" width="100%" />
+              <img src={result.src} alt="" width="100%"  height="250px"/>
             </div>
           )}
           <label htmlFor="addNewImg" style={{ textAlign: "center" }}>

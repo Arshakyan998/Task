@@ -14,6 +14,7 @@ import {
 } from "../../redux/actions/Main";
 import Slider from "./Slider";
 import AddNewPhoto from "./AddNewPhoto";
+let pos = 0;
 
 function Main() {
   const [activeType, setActiveType] = React.useState("");
@@ -97,33 +98,39 @@ function Main() {
     dispatch(addNewPhoto(result));
   };
 
-  let pos = 0;
   const sliderHendler = () => {
-    pos += Math.round(
-      sliderRefs.current.childNodes[0].getBoundingClientRect().width + 25
-    );
+
+   pos +=Math.floor(
+    sliderRefs.current.childNodes[0].getBoundingClientRect().width + 25
+   ); 
+   let currentLength=Math.floor(
+    sliderRefs.current.getBoundingClientRect().width 
+   ); 
+    
+   let elementLength=Math.floor(
+    sliderRefs.current.childNodes[0].getBoundingClientRect().width + 25
+   ); 
+    
     sliderRefs.current.childNodes.forEach((element) => {
       element.style.transform = `translateX(-${pos}px)`;
-    });
-
-    if (
-      pos >
-      (sliderRefs.current.childNodes.length +
-        sliderRefs.current.childNodes.length -
-        3) *
-        100
-    ) {
+    }); 
+  
+if (pos > currentLength-elementLength*4) {
       pos = 0;
       sliderRefs.current.childNodes.forEach((element) => {
         element.style.transform = `translateX(-${pos}px)`;
       });
     }
+ 
+
   };
 
   React.useEffect(() => {
+    pos=0
     sliderRefs.current.childNodes.forEach((element) => {
       element.style.transform = `translateX(0px)`;
     });
+
   }, [currentType, currentCat]);
 
   return (

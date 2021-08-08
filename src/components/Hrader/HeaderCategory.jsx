@@ -3,7 +3,6 @@ import { useDispatch } from "react-redux";
 import PropTypes from 'prop-types'
 
 import { changeCategoryParams as changeCatParams } from "../../redux/actions/Main";
-import { any } from "async";
 
 function HeaderCategory({
   category,
