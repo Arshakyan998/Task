@@ -1,0 +1,80 @@
+@import "./MainMixinst";
+
+$borderRadius: 5px;
+
+.main_slider {
+  background: #383a45;
+  width: 100%;
+  overflow: hidden;
+  border-radius: $borderRadius;
+  position: relative;
+  margin-top: 1.5rem;
+  @include flex;
+
+
+  &_refs {
+    .main_slider_block:not(:first-child) {
+      margin-left: 1.5rem;
+    }
+    @include flex;
+
+    flex-wrap: nowrap;
+    padding: 15px;
+  }
+
+ &_block{
+        transition:all 0.5s ease;
+
+ }
+
+
+  &_next {
+    width: 50px;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    background: #383a45;
+    height: 100%;
+    width: 100px;
+    @include flex(none, flex-start, center);
+    box-shadow: 0 0 15px 19px #383a45;
+    font-size: 42px;
+    cursor: pointer;
+    &:hover {
+      color: orange;
+    }
+  }
+  .slider_block {
+    width: 320px;
+    height: 370px;
+    background: #fff;
+    padding: 3px;
+    border-radius: $borderRadius;
+    margin: 2px;
+    @include flex(column, center, flex-start);
+    font-family: Roboto;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 21px;
+    letter-spacing: 0em;
+    color: #5a5a5a;
+    position: relative;
+    box-sizing: border-box;
+
+    &_img {
+      margin: 2px auto;
+    }
+    &_remove {
+      position: absolute;
+      right: 0;
+      top: 5px;
+      cursor: pointer;
+    }
+
+    img {
+      border-radius: $borderRadius;
+    }
+  }
+}

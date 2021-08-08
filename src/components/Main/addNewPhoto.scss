@@ -1,0 +1,80 @@
+@import './MainMixinst';
+
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+$borderRadius:5px;
+
+.btn{
+        position: absolute;
+        right: 5px;
+        top:65%
+}
+
+.add{
+position: relative;
+right: -85%;
+top: -58px;
+width: 255px;
+background: #545662;
+border-radius: $borderRadius;
+border: 2px solid #383A45;
+transition:all 0.7s ease!important;
+z-index: 7;
+input[type=file]{
+        visibility: hidden;
+        
+        
+}
+&_main{
+        &_photo{
+                 cursor: pointer;
+
+         @include flex(column,center,center);
+         height: 70px;
+         background:#383A45;
+         border-radius: $borderRadius;
+
+         >div{
+                height: 14px;
+                margin:1px auto;
+                     >span{
+                        font-family: Roboto;
+                        font-size: 15px;
+                        font-style: normal;
+                        font-weight: 400;
+                        line-height: 14px;
+                        letter-spacing: 0em;
+                        color: #fff;
+                        
+                     }                
+         }
+         
+        }
+}
+
+&_description{
+        margin-top: 30px;
+        padding: 10px;
+        @include flex(column,space-between,center);
+        color: ivory;
+        input[type=text]{
+                outline: none;
+                background: none;
+                border:1px solid #fff;
+                border-radius: $borderRadius;
+                width: 100%;
+                font-size: 25px;
+                padding: 5px;
+                margin: 10px auto;
+                
+        }
+}
+
+ 
+}
+.add_block_hide{       
+           
+                          right: -100% !important;;
+                          transition:all 0.7s ease!important;
+
+
+         }
