@@ -103,11 +103,11 @@ function Main() {
    pos +=Math.floor(
     sliderRefs.current.childNodes[0].getBoundingClientRect().width + 25
    ); 
-   let currentLength=Math.floor(
+   let currentBlockWidth=Math.floor(
     sliderRefs.current.getBoundingClientRect().width 
    ); 
     
-   let elementLength=Math.floor(
+   let CurrentElementWidth=Math.floor(
     sliderRefs.current.childNodes[0].getBoundingClientRect().width + 25
    ); 
     
@@ -115,7 +115,7 @@ function Main() {
       element.style.transform = `translateX(-${pos}px)`;
     }); 
   
-if (pos > currentLength-elementLength*4) {
+if (pos > currentBlockWidth-CurrentElementWidth*4) {
       pos = 0;
       sliderRefs.current.childNodes.forEach((element) => {
         element.style.transform = `translateX(-${pos}px)`;

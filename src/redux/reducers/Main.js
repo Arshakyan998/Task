@@ -1,5 +1,5 @@
 let initalState = null
-if(localStorage.getItem('item')!==undefined){
+if(localStorage.getItem('item')!==undefined && localStorage.getItem('item')!==null ){
  JSON.parse(localStorage.getItem('item'))
 
   initalState = {
@@ -93,6 +93,7 @@ if(localStorage.getItem('item')!==undefined){
     currentType: "",
   };
 }
+
 
 
 const main = (state = initalState, action) => {

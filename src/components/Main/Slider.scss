@@ -44,6 +44,9 @@ $borderRadius: 5px;
     &:hover {
       color: orange;
     }
+    &::selection{
+      background:transparent;
+    }
   }
   .slider_block {
     width: 320px;
